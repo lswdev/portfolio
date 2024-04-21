@@ -8,9 +8,8 @@
 import Main from '@/views/Main.vue'
 export default {
   components: { Main },
+  data:() => ({
+    main: false,
+  }),
 }
 </script>
-
-<style>
-
-</style>
