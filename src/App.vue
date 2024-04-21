@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    Hello World
+    <Main></Main>
   </div>
 </template>
 
 <script>
+import Main from '@/views/Main.vue'
 export default {
-  components: {},
+  components: { Main },
 }
 </script>
 
