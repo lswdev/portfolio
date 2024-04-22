@@ -17,10 +17,6 @@
         <div class="inputBx">
           <input type="submit" value="둘러보기">
         </div>
-<!--        <div class="links">-->
-<!--          <a href="#">Forget Password</a>-->
-<!--          <a href="#">Signup</a>-->
-<!--        </div>-->
       </div>
     </div>
     <!--ring ends-->
