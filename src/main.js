@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import './assets/app.css'
-import '@/components/Snow'
+// import '@/components/Snow'
 
 import App from './App.vue'
 Vue.config.productionTip = false

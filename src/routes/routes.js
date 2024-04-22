@@ -1,14 +1,24 @@
+/* eslint-disable */
+import Vue from "vue";
+import VueRouter from "vue-router";
+// import { store } from "@/store/index.js";
 
-// import Vue from 'vue'
-// import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
-
-export const router = {
+export const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/main',
-      components:() => import('@/views/Main.vue')
+      path: '/intro',
+      name: 'intro',
+      component: () => import('@/views/Intro.vue'),
+    },{
+      path: '/effect',
+      name: 'effect',
+      component: () => import('@/views/EffectView.vue'),
+    },{
+      path: '/',
+      redirect: '/intro'
     },
   ]
-};
+});

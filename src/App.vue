@@ -1,15 +1,13 @@
 <template>
   <div id="app">
-    <Main></Main>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Main from '@/views/Main.vue'
 export default {
-  components: { Main },
   data:() => ({
-    main: false,
+
   }),
 }
 </script>

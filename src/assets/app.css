@@ -9,6 +9,7 @@ body {
   background: #111;
   overflow-y: auto;
   overflow-x: hidden;
+  /*cursor: url("./images/ico-circle-25.png")5 5, auto;*/
 }
 
 /* animation */
@@ -102,7 +103,7 @@ body {
   background: #0078ff;
   background: linear-gradient(45deg, #a435ff, #72ffa3);
   border: none;
-  cursor: pointer;
+  transition: 0.3s ease all;
 }
 .login .inputBx input::placeholder {
   color: rgba(255, 255, 255, 0.75);
