@@ -8,13 +8,13 @@
       <i style="--clr:#fffd44;"></i>
       <div class="login">
         <h2>Login</h2>
-        <div class="inputBx">
+        <div class="inputBx input-intro">
           <input type="text" placeholder="이시우" readonly>
         </div>
-        <div class="inputBx">
+        <div class="inputBx input-intro">
           <input type="email" placeholder="lswsepia@gmail.com" readonly>
         </div>
-        <div class="inputBx">
+        <div class="inputBx input-intro">
           <input type="submit" value="둘러보기">
         </div>
       </div>
@@ -24,7 +24,12 @@
 </template>
 
 <script>
+import {inputAnimation} from "@/mixins/mixins";
+
 export default {
+  mounted() {
+    inputAnimation();
+  },
 }
 </script>
 

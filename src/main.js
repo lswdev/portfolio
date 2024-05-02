@@ -5,9 +5,8 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 // plugins css
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import '@/assets/app.css'
 
-import './assets/app.css'
-// import '@/components/Snow'
 global.jQuery = require('jquery');
 const $ = global.jQuery;
 window.$ = $;
