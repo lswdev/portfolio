@@ -8,6 +8,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import './assets/app.css'
 // import '@/components/Snow'
+global.jQuery = require('jquery');
+const $ = global.jQuery;
+window.$ = $;
 
 import App from './App.vue'
 Vue.config.productionTip = false
