@@ -84,26 +84,27 @@
   text-align: center;
 }
 .login .inputBx input {
+  display: none;
   position: relative;
-  width: 100%;
+  width: 70%;
   padding: 12px 20px;
   background: transparent;
-  border: 2px solid #fff;
-  border-radius: 40px;
-  font-size: 1.2em;
-  color: #fff;
-  box-shadow: none;
-  outline: none;
-}
-.login .inputBx input[type="submit"] {
-  display: none;
-  width: 70%;
-  /*background: #0078ff;*/
-  /*background: linear-gradient(45deg, #a435ff, #72ffa3);*/
   border: 1px solid #fff;
+  border-radius: 40px;
+  box-shadow: none;
+  color: #fff;
+  outline: none;
   margin-top: 1rem;
   font-size: 1.12rem;
   font-weight: 300;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+  transition: 0.7s ease all;
+}
+.login .inputBx input:hover {
+  border: 2px solid #01fdcf;
+  filter: drop-shadow(0 0 2px #01fdcf);
 }
 .login .inputBx input::placeholder {
   color: rgba(255, 255, 255, 0.75);

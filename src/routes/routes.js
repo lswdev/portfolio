@@ -13,6 +13,10 @@ export const router = new VueRouter({
       name: 'intro',
       component: () => import('@/views/Intro.vue'),
     },{
+      path: '/intro-detail',
+      name: 'intro-detail',
+      component: () => import('@/views/IntroDetailView.vue'),
+    },{
       path: '/effect',
       name: 'effect',
       component: () => import('@/views/EffectView.vue'),
