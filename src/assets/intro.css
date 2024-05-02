@@ -82,9 +82,9 @@
   position: relative;
   width: 100%;
   text-align: center;
+  display: none;
 }
 .login .inputBx input {
-  display: none;
   position: relative;
   width: 70%;
   padding: 12px 20px;
@@ -122,6 +122,17 @@
   text-decoration: none;
 }
 
+
+/* introDetailView */
+.intro-detail {
+  position: relative;
+  width: 80%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
 
 
 /* 모바일 가로 모드 */

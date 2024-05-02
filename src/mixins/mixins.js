@@ -1,9 +1,8 @@
 
 function inputAnimation() {
   window.$('.ring').mouseover(function(){
-    window.$('.input-intro > input').fadeIn(800);
+    window.$('.input-intro').fadeIn(800);
   });
-  // window.$('.input-intro > input').css('','');
 }
 
 function switchScreenAnimation() {

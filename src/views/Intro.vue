@@ -26,9 +26,13 @@ export default {
     pointerShowAnimation() {
       window.$('.cursor').fadeIn(200);
     },
-    introDetail(e) {
-      console.log(e);
-    }
+    introDetail() {
+      window.$('.main-top-contain').fadeOut(200);
+      setTimeout(this.changePage,300);
+    },
+    changePage() {
+      this.$router.push('intro-detail');
+    },
   },
   mounted() {
     inputAnimation();

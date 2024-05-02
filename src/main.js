@@ -6,18 +6,15 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '@/assets/app.css'
+// import '@/components/Snow'
 
 /* jQuery */
 global.jQuery = require('jquery');
 const $ = global.jQuery;
 window.$ = $;
 
-/* Snow */
-
-
 import App from './App.vue'
 Vue.config.productionTip = false
-
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

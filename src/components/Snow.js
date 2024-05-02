@@ -21,6 +21,6 @@ for (let i = 0; i < 200; i++) {
   };
 
   snow.animate(keyframe, option);
-  document.getElementById('app').appendChild(snow);
+  document.body.appendChild(snow);
 }
 
