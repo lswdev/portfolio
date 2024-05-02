@@ -13,6 +13,17 @@ body {
   /*cursor: url("./images/ico-circle-25.png")5 5, auto;*/
 }
 
+/* 마우스 포인터 */
+.cursor {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  /*z-index: 99;*/
+  border: 2px solid #fff;
+  border-radius: 100%;
+  will-change: transform;
+}
+
 /* 배경 이펙트 */
 .snow {
   position: absolute;
