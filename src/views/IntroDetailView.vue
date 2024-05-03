@@ -1,7 +1,7 @@
 <!--eslint-disable-->
 <template>
-  <section class="detail-section">
-    <div class="main-top-contain detail-contain" id="detail-contain" ref="detailContain1">
+  <section class="detail-section" @wheel.prevent="scrolls">
+    <div class="main-top-contain detail-contain" id="detail-contain1" ref="detailContain1">
       <div class="intro-detail">
 <!--          <Carousel></Carousel>-->
       </div>
@@ -33,18 +33,35 @@
 import { inputAnimation } from "@/mixins/mixins";
 
 export default {
+  data:() => ({
+    windowTop: window.top.scrollY,
+    offsets: null
+  }),
   mounted() {
+    window.scrollTo(0, 0); 
     inputAnimation();
-    document.addEventListener('scroll', this.scrollEvents, true);
+    // document.addEventListener('scroll', this.scrollEvents, true);
   },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.scrollEvents);
-  },
+  // beforeUnmount() {
+  //   window.removeEventListener('scroll', this.scrollEvents);
+  // },
   methods : {
-    scrollEvents(e) {
-      console.log("스크롤 될 때마다 이 함수 실행",e)
-    }
+    scrolls() {
+      // this.offsets = document.querySelector("#detailContain2").offsetTop;
+      window.scrollTo({top: 1000, behavior:'smooth'});
+      this.windowTop = window.top.scrollY;
+    },
+    // scrollEvents() {
+    //   if(this.windowTop < 0) {
+    //
+    //   }
+    //   console.log(this.windowTop);
+    //   // console.log("스크롤 될 때마다 이 함수 실행",e)
+    // }
   },
+  created() {
+    // this.scrollEvents();
+  }
 }
 </script>
 
