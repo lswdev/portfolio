@@ -30,17 +30,14 @@
   </section>
 </template>
 <script>
-import { inputAnimation } from "@/mixins/mixins";
 
 export default {
   data:() => ({
     windowTop: window.top.scrollY,
     windowHeight: null,
-    offsets: null
   }),
   mounted() {
     window.scrollTo(0, 0);
-    inputAnimation();
   },
   created() {
     this.initTop();
@@ -72,13 +69,6 @@ export default {
       }
       window.scrollTo({top: this.windowHeight, behavior:'smooth'});
     },
-    // scrollEvents() {
-    //   if(this.windowTop < 0) {
-    //
-    //   }
-    //   console.log(this.windowTop);
-    //   // console.log("스크롤 될 때마다 이 함수 실행",e)
-    // }
   },
 }
 </script>
