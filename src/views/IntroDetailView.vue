@@ -1,6 +1,6 @@
 <!--eslint-disable-->
 <template>
-  <section class="detail-section" @wheel.prevent="scrolls">
+  <section class="detail-section" @wheel.prevent="scrolls" id="detail-section">
     <div class="main-top-contain detail-contain" id="detail-contain1" ref="detailContain1">
       <div class="intro-detail">
 <!--          <Carousel></Carousel>-->
@@ -35,21 +35,42 @@ import { inputAnimation } from "@/mixins/mixins";
 export default {
   data:() => ({
     windowTop: window.top.scrollY,
+    windowHeight: null,
     offsets: null
   }),
   mounted() {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
     inputAnimation();
-    // document.addEventListener('scroll', this.scrollEvents, true);
   },
-  // beforeUnmount() {
-  //   window.removeEventListener('scroll', this.scrollEvents);
-  // },
+  created() {
+    this.initTop();
+  },
   methods : {
-    scrolls() {
-      // this.offsets = document.querySelector("#detailContain2").offsetTop;
-      window.scrollTo({top: 1000, behavior:'smooth'});
+    initTop() {
+      window.scrollTo(0, 0);
+    },
+    scrolls(e) {
       this.windowTop = window.top.scrollY;
+      const sectionEl = document.getElementById('detail-section');
+      // 스크롤 DOWN
+      if (e.wheelDelta < 0) {
+        if (this.windowHeight === 0) {
+          this.windowHeight = window.innerHeight;
+        } else if (e.target.id === `detail-contain${sectionEl.children.length}`) {
+          e.preventDefault();
+        } else {
+          this.windowHeight += window.innerHeight;
+        }
+      }
+      // 스크롤 UP
+      else {
+        if (this.windowHeight === 0) {
+          e.preventDefault();
+        } else {
+          this.windowHeight -= window.innerHeight;
+        }
+      }
+      window.scrollTo({top: this.windowHeight, behavior:'smooth'});
     },
     // scrollEvents() {
     //   if(this.windowTop < 0) {
@@ -59,9 +80,6 @@ export default {
     //   // console.log("스크롤 될 때마다 이 함수 실행",e)
     // }
   },
-  created() {
-    // this.scrollEvents();
-  }
 }
 </script>
 
