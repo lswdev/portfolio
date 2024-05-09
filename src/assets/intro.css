@@ -140,20 +140,74 @@
   border: 1px solid white;
 }
 
+.detail-contain:first-of-type {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.my-avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: url("./images/avatar01.png") 50% 50% no-repeat;
+  background-size: 100%;
+  margin: 5rem;
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.3s ease all;
+  color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  animation: avatarBorder 2s ease-in-out infinite;
+}
+.my-avatar:hover {
+  color: #FFF;
+  background: rgba(51, 51, 51, 0.45);
+  z-index: 2;
+}
+@keyframes avatarBorder {
+  10% {
+    border-radius: 80px;
+    box-shadow: 0 0 50px rgba(61, 53, 125, 0.81);
+  }
+  100% {
+    box-shadow: none;
+    border-radius: 100%;
+  }
+}
+.avatar-label {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  font-size: 1.125rem;
+  color: #FFF;
+  background-color: rgb(39,37,37);
+  box-shadow: 0 0 5px rgb(174,165,246) ;
+  border-radius: 0.3rem;
+  margin: 5rem;
+  padding: 0.5rem 0;
+  writing-mode: vertical-lr;
+  transform: rotate(-140deg)
+}
 
 /* 모바일 가로 모드 */
-@media (min-width: 576px) {
-
+@media (max-width: 576px) {
+  .my-avatar {}
+  .avatar-label {}
 }
 /* 태블릿 디바이스 */
-@media (min-width: 768px) {
-
+@media (max-width: 768px) {
+  .my-avatar {}
+  .avatar-label {}
 }
 /* 데스크탑 */
-@media (min-width: 992px) {
-
+@media (max-width: 992px) {
+  .my-avatar {width: 200px;height: 200px;}
+  .avatar-label {}
 }
 /* 큰화면 데스크탑 */
-@media (min-width: 1200px) {
-
+@media (max-width: 1200px) {
 }
