@@ -11,6 +11,7 @@ export const router = new VueRouter({
     {
       path: '/intro',
       name: 'intro',
+      meta: { CustomPointer: true},
       component: () => import('@/views/Intro.vue'),
     },{
       path: '/intro-detail',

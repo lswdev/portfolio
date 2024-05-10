@@ -9,6 +9,8 @@
         Lee Siwoo
       </div>
       <span class="avatar-label">Developer</span>
+
+      <img class="mouse-scroll" src="../assets/images/mouse-cursor-lg.png" alt="">
     </div>
     <div class="main-top-contain detail-contain" id="detail-contain2" ref="detailContain2">
       <div class="intro-detail">
@@ -55,15 +57,19 @@ export default {
       const sectionEl = document.getElementById('detail-section');
       // 스크롤 DOWN
       if (e.wheelDelta < 0) {
-        console.log('Down');
-        // 끝 도달
+        console.log("this.windowTop", this.windowTop);
+        if (this.windowTop === 0) {
+          window.$('.mouse-scroll').css('opacity', '0');
+        }
         if (e.target.id === `detail-contain${sectionEl.children.length}`) {
           e.preventDefault();
         }
       }
       // 스크롤 UP
       else {
-        console.log('Up');
+        if (this.windowTop > 0 && this.windowTop < 800) {
+          window.$('.mouse-scroll').css('opacity', '');
+        }
       }
       // 맨 위로
       // window.scrollTo({top: 0, behavior:'smooth'});

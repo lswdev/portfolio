@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="cursor"></div>
+    <div class="cursor" v-if="$route.meta.CustomPointer"></div>
     <router-view></router-view>
   </div>
 </template>
