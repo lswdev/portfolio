@@ -12,6 +12,8 @@ body {
   overflow-x: hidden;
   /*cursor: url("./images/ico-circle-25.png")5 5, auto;*/
 }
+ul { margin: 0; padding: 0;}
+li { list-style: none; }
 
 /* 마우스 포인터 */
 .cursor {

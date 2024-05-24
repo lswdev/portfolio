@@ -5,7 +5,7 @@
       <i style="--clr:#27fd01;"></i>
       <i style="--clr:#ff0057;"></i>
       <i style="--clr:#fffd44;"></i>
-      <div class="login">
+      <div class="custom-area">
         <h2>Lee Siwoo</h2>
         <div class="inputBx input-intro">
           <input value="둘러보기" id="intro-submit-btn" readonly @click="introDetail">

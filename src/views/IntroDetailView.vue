@@ -20,30 +20,54 @@
         </ul>
       </span>
 
-      <div class="main-top-contain detail-contain" id="detail-contain1" ref="detailContain1">
-        <div style="display: flex">
+      <div class="main-top-contain detail-contain" id="detail-contain1" ref="detailContain1" >
+        <div class="avatar">
+          <span class="avatar-label">Developer</span>
           <div class="my-avatar">이시우<br>1997. 02. 28<br>Lee Siwoo</div>
         </div>
-        <span class="avatar-label">Developer</span>
-        <img class="mouse-scroll" src="../assets/images/mouse-cursor-lg.png" alt="mouse-scroll-point" @click="scrollIconClick">
+        <img class="mouse-scroll" src="../assets/images/mouse-cursor-lg.png" alt="mouse-scroll-point">
       </div>
+
       <div class="main-top-contain detail-contain" id="detail-contain2" ref="detailContain2">
-        <div class="intro-detail" data-aos="zoom-out-up" style="width: 50vw; margin: 10vw auto">
-          <div class="login">
-            <h2>테스트 Page 입니다.</h2>
+        <div class="intro-detail skills">
+          <div class="custom-area skills-area">
+            <h2 style="font-weight: bold" data-aos="zoom-out-up" data-aos-anchor-placement="top-bottom">SKILL</h2>
+            <ul class="skill-contain">
+              <li>
+                <div>
+                  <p>Skill-01</p>
+                  <span></span>
+                  <span></span>
+                </div>
+              </li>
+              <li>
+
+              </li>
+              <li>
+
+              </li>
+              <li>
+
+              </li>
+              <li>
+
+              </li>
+            </ul>
           </div>
+
+
         </div>
       </div>
       <div class="main-top-contain detail-contain" id="detail-contain3" ref="detailContain3">
         <div class="intro-detail">
-          <div class="login">
+          <div class="custom-area">
             <h2>Login3</h2>
           </div>
         </div>
       </div>
       <div class="main-top-contain detail-contain" id="detail-contain4" ref="detailContain4">
         <div class="intro-detail">
-          <div class="login">
+          <div class="custom-area">
             <h2>Login4</h2>
           </div>
         </div>
@@ -54,6 +78,7 @@
 </template>
 
 <script>
+import { skillList, careerList } from '../DataList'
 
 export default {
   data:() => ({
@@ -75,9 +100,6 @@ export default {
       window.$('.hamburger').toggleClass('is-active');
       this.toggleNav = !this.toggleNav;
     },
-    scrollIconClick() {
-
-    }
   },
 }
 </script>
