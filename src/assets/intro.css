@@ -149,18 +149,20 @@
 
 .mouse-scroll {
   width: 80px;
-  position: sticky;
-  left: 47.5%;
-  top:90%;
+  position: absolute;
+  left: 50vw;
+  bottom: 15px;
+  transform: translateX(-50%);
   transition: 0.5s ease all;
   animation: 1.5s ease-in-out scrollMove infinite;
   opacity: 0.6;
   filter: invert(1);
+  cursor: pointer;
 }
 
 @keyframes scrollMove {
   50% {
-    transform: translateY(15px);
+    transform: translateY(15px) translateX(-50%);
   }
 }
 
