@@ -1,16 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("fonts.css");
+@import url("icons.css");
 @import url("intro.css");
 :root {
   --kt-app-sidebar-width: 200px;
   user-select: none;
 }
-* {font-family: "Quicksand", sans-serif;}
+
 body {
   position: relative;
   background: #171E41;
   overflow-y: auto;
   overflow-x: hidden;
   /*cursor: url("./images/ico-circle-25.png")5 5, auto;*/
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 ul { margin: 0; padding: 0;}
 li { list-style: none; }

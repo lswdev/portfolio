@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+* {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.font-gradient {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 0.3rem;
+  background: linear-gradient(128.93deg, rgb(171, 160, 246) 22.41%, rgb(255, 255, 255) 93.45%) text;
+  -webkit-text-fill-color: transparent;
+}

@@ -23,41 +23,34 @@
       <div class="main-top-contain detail-contain" id="detail-contain1" ref="detailContain1" >
         <div class="avatar">
           <span class="avatar-label">Developer</span>
-          <div class="my-avatar">이시우<br>1997. 02. 28<br>Lee Siwoo</div>
+          <span class="my-avatar">이시우<br>1997. 02. 28<br>Lee Siwoo</span>
+          <div class="avatar-talk">
+            <span class="talk-arrow">◀</span>
+            <span style="color: rgba(255,255,255,0.47)">
+              <font class="font-gradient">Frontend</font> 로써 차근차근 쌓아올리는 개발자
+              <font class="font-gradient">이시우</font> 입니다.
+            </span>
+          </div>
         </div>
         <img class="mouse-scroll" src="../assets/images/mouse-cursor-lg.png" alt="mouse-scroll-point">
       </div>
-
+      <!-- 기술 목록 -->
       <div class="main-top-contain detail-contain" id="detail-contain2" ref="detailContain2">
         <div class="intro-detail skills">
           <div class="custom-area skills-area">
             <h2 style="font-weight: bold" data-aos="zoom-out-up" data-aos-anchor-placement="top-bottom">SKILL</h2>
             <ul class="skill-contain">
-              <li>
-                <div>
-                  <p>Skill-01</p>
-                  <span></span>
-                  <span></span>
-                </div>
-              </li>
-              <li>
-
-              </li>
-              <li>
-
-              </li>
-              <li>
-
-              </li>
-              <li>
-
+              <li class="skill-item" v-for="(item, index) in skillLists" style="padding-bottom: 2rem">
+                <p class="skill-name">{{ item.skill }}</p>
+                <ul class="skill-desc">
+                  <li v-for="(item, index) in skillDesc[index]" v-text="item"></li>
+                </ul>
               </li>
             </ul>
           </div>
-
-
         </div>
       </div>
+
       <div class="main-top-contain detail-contain" id="detail-contain3" ref="detailContain3">
         <div class="intro-detail">
           <div class="custom-area">
@@ -85,9 +78,14 @@ export default {
     windowTop: window.top.scrollY,
     windowHeight: null,
     toggleNav: false,
+    skillLists: skillList,
+    skillDesc: [],
   }),
   mounted() {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
+    skillList.map( item => {
+      this.skillDesc.push(item.desc);
+    });
   },
   created() {
     this.initTop();
