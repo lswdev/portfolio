@@ -222,13 +222,14 @@
 }
 .avatar {
   width: 100%;
+  padding-top: 5rem;
   display: flex;
 }
 .avatar-label {
   position: absolute;
   z-index: 1;
   left: 0;
-  top: 0;
+  top: 4.3rem;
   font-size: 1.125rem;
   color: #FFF;
   background-color: rgb(39,37,37);
