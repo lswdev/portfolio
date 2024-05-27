@@ -11,7 +11,7 @@
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .ring {
   position: relative;
@@ -61,7 +61,7 @@
 }
 
 .custom-area {
-  position: absolute;
+  position: relative;
   width: 300px;
   height: 100%;
   display: flex;
@@ -164,26 +164,6 @@
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
-}
-.mouse-scroll {
-  width: 80px;
-  position: absolute;
-  left: 100%;
-  top: 100%;
-  transform: translateX(-80px) translateY(-100px);
-  transition: 0.5s ease all;
-  animation: 1.5s ease-in-out scrollMove infinite;
-  filter: invert(1);
-}
-@keyframes scrollMove {
-  0% { opacity: 0.2; }
-  20% { opacity: 0.4; }
-  30% { opacity: 0.2; }
-  50% {
-    opacity: 0.4;
-    transform: translateX(-80px) translateY(-110px);
-  }
-  100% { opacity: 0.4 }
 }
 
 .my-avatar {
@@ -300,15 +280,37 @@
   justify-content: flex-start;
 }
 .skills-area > h2 {
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
   font-weight: bold;
 }
-.skill-contain { width: 100%; }
-.skill-contain li { color: #FFF; }
+.skill-contain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.skill-contain li {
+  color: #FFF;
+}
+.skill-contain > li {
+  width: 70%;
+  border-radius: 20px;
+  border: 2px solid #3ac7d9;
+  box-shadow: 0 0 15px #3ac7d9;
+  padding: 1rem 1rem;
+  font-size: 1.125rem;
+}
+.skill-contain > li:nth-child(odd) {
+  align-self: flex-end;
+}
 .skill-contain li > div {
   width: 45vw;
   border: 1px solid grey;
   border-radius: 10px;
+}
+.skill-desc {
+  word-break: keep-all;
+  white-space: pre-wrap;
 }
 
 

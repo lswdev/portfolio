@@ -62,3 +62,25 @@
   -o-transform: translateY(-13px) rotate(90deg);
   transform: translateY(-13px) rotate(90deg);
 }
+
+/* mouse-icon */
+.mouse-scroll {
+  width: 80px;
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  transform: translateX(-80px) translateY(-100px);
+  transition: 0.5s ease all;
+  animation: 1.5s ease-in-out scrollMove infinite;
+  filter: invert(1);
+}
+@keyframes scrollMove {
+  0% { opacity: 0.2; }
+  20% { opacity: 0.4; }
+  30% { opacity: 0.2; }
+  50% {
+    opacity: 0.4;
+    transform: translateX(-80px) translateY(-110px);
+  }
+  100% { opacity: 0.4 }
+}
