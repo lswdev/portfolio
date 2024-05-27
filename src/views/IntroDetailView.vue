@@ -14,9 +14,9 @@
           </div>
         </div>
         <ul class="nav-list" style="color: #FFF;" v-if="toggleNav">
-          <li>introduce</li>
-          <li>skill</li>
-          <li>careers</li>
+          <li @click="">introduce</li>
+          <li @click="">skill</li>
+          <li @click="">careers</li>
         </ul>
       </span>
 
@@ -38,12 +38,19 @@
       <div class="main-top-contain detail-contain" id="detail-contain2" ref="detailContain2">
         <div class="intro-detail skills">
           <div class="custom-area skills-area">
-            <h2 style="font-weight: bold" data-aos="zoom-out-up" data-aos-anchor-placement="top-bottom">SKILL</h2>
+            <h2> <!-- data-aos="zoom-out-up" data-aos-anchor-placement="top-bottom"-->
+              <span style="padding-right: 17px">&lt;</span>
+              <span class="font-500">SKILL</span>
+              <span>/&gt;</span>
+            </h2>
             <ul class="skill-contain">
-              <li class="skill-item" v-for="(item, index) in skillLists" style="padding-bottom: 2rem">
-                <p class="skill-name">{{ item.skill }}</p>
+              <li class="skill-item" v-for="(item, index) in skillLists" :data-aos="index%2===0 ? 'zoom-in-left' : 'zoom-in-right'">
+                <p class="skill-name font-700">{{ item.skill }}</p>
                 <ul class="skill-desc">
-                  <li v-for="(item, index) in skillDesc[index]" v-text="item"></li>
+                  <li v-for="(item, index) in skillDesc[index]">
+                    <span>▪</span>
+                    <span>{{ item }}</span>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -80,7 +87,14 @@ export default {
     toggleNav: false,
     skillLists: skillList,
     skillDesc: [],
+    skillDirection: 'zoom-in-left',
   }),
+  computed: {
+    skillLeftRight() {
+      // return this.skillDesc.length%2 === 0 ? 'zoom-in-left' : 'zoom-in-right';
+      return this.skillDirection;
+    }
+  },
   mounted() {
     // window.scrollTo(0, 0);
     skillList.map( item => {

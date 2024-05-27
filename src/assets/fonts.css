@@ -12,3 +12,12 @@
   background: linear-gradient(128.93deg, rgb(58, 199, 217) 22.41%, rgb(173, 142, 255) 93.45%) text;
   -webkit-text-fill-color: transparent;
 }
+
+.font-400 { font-weight: 400; }
+.font-500 { font-weight: 500; }
+.font-600 { font-weight: 600; }
+.font-700 { font-weight: 700; }
+
+.font-1-5X { font-size: 2rem; }
+.font-2X { font-size: 3rem; }
+.font-2-5X { font-size: 4rem; }
