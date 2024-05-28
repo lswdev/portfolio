@@ -1,6 +1,7 @@
 <!--eslint-disable-->
 <template>
   <div>
+    <div class="scroll-bar"></div>
     <section class="detail-section" id="detail-section">
       <!-- navList -->
       <span class="detail-nav">
@@ -27,7 +28,7 @@
           <div class="avatar-talk">
             <span class="talk-arrow">◀</span>
             <span style="color: rgba(255,255,255,0.47)">
-              <font class="font-gradient">Frontend</font> 로써 차근차근 쌓아올리는 개발자
+              <font class="font-gradient">Frontend</font>로서 차근차근 쌓아올리는 개발자
               <font class="font-gradient">이시우</font> 입니다.
             </span>
           </div>
@@ -89,17 +90,29 @@ export default {
     skillDesc: [],
     skillDirection: 'zoom-in-left',
   }),
-  computed: {
-    skillLeftRight() {
-      // return this.skillDesc.length%2 === 0 ? 'zoom-in-left' : 'zoom-in-right';
-      return this.skillDirection;
-    }
-  },
   mounted() {
     // window.scrollTo(0, 0);
     skillList.map( item => {
       this.skillDesc.push(item.desc);
     });
+    const scrollBar = document.querySelector('.scroll-bar');
+    scrollBar.animate(
+      [
+        { transform: 'translateX(-100%)' },
+        { transform: 'translateX(0)' }
+      ],
+      {
+        fill: 'both',
+        duration: 1,
+        // eslint-disable-next-line no-undef
+        timeline: new ScrollTimeline({
+          scrollOffsets: [
+            { target: document.body, edge: 'start', threshold: 1 },
+            { target: document.body, edge: 'end', threshold: 1 },
+          ]
+        })
+      }
+    )
   },
   created() {
     this.initTop();
