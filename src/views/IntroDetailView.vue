@@ -95,24 +95,7 @@ export default {
     skillList.map( item => {
       this.skillDesc.push(item.desc);
     });
-    const scrollBar = document.querySelector('.scroll-bar');
-    scrollBar.animate(
-      [
-        { transform: 'translateX(-100%)' },
-        { transform: 'translateX(0)' }
-      ],
-      {
-        fill: 'both',
-        duration: 1,
-        // eslint-disable-next-line no-undef
-        timeline: new ScrollTimeline({
-          scrollOffsets: [
-            { target: document.body, edge: 'start', threshold: 1 },
-            { target: document.body, edge: 'end', threshold: 1 },
-          ]
-        })
-      }
-    )
+    this.bodyScroll();
   },
   created() {
     this.initTop();
@@ -124,6 +107,26 @@ export default {
     navList() {
       window.$('.hamburger').toggleClass('is-active');
       this.toggleNav = !this.toggleNav;
+    },
+    bodyScroll() {
+      const scrollBar = document.querySelector('.scroll-bar');
+      scrollBar.animate(
+          [
+            { transform: 'translateX(-100%)' },
+            { transform: 'translateX(0)' }
+          ],
+          {
+            fill: 'both',
+            duration: 1,
+            // eslint-disable-next-line no-undef
+            timeline: new ScrollTimeline({
+              scrollOffsets: [
+                { target: document.body, edge: 'start', threshold: 1 },
+                { target: document.body, edge: 'end', threshold: 1 },
+              ]
+            })
+          }
+      )
     },
   },
 }
