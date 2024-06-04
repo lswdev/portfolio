@@ -20,7 +20,7 @@
           <li @click="">careers</li>
         </ul>
       </span>
-
+      <!-- 아바타 -->
       <div class="main-top-contain detail-contain" id="detail-contain1" ref="detailContain1" >
         <div class="avatar">
           <span class="avatar-label">Developer</span>
@@ -58,9 +58,9 @@
           </div>
         </div>
       </div>
-
+      <!-- Career -->
       <div class="main-top-contain detail-contain" id="detail-contain3" ref="detailContain3">
-        <div class="intro-detail">
+        <div class="intro-detail careers">
           <div class="custom-area">
             <h2>Login3</h2>
           </div>
@@ -89,20 +89,45 @@ export default {
     skillLists: skillList,
     skillDesc: [],
     skillDirection: 'zoom-in-left',
+    device: 'web',
+    deviceWidth: window.innerWidth,
   }),
   mounted() {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     skillList.map( item => {
       this.skillDesc.push(item.desc);
     });
     this.bodyScroll();
+    window.addEventListener('resize', this.windowSizeChange);
   },
   created() {
     this.initTop();
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.windowSizeChange);
+  },
   methods : {
     initTop() {
       window.scrollTo(0, 0);
+    },
+    windowSizeChange() {
+      this.deviceWidth = window.innerWidth;
+      if (992 < this.deviceWidth && this.deviceWidth <= 1200) {  // 데스크탑
+        this.device = 'web';
+      }
+      else if (768 < this.deviceWidth && this.deviceWidth <= 992) {  // 태블릿 디바이스
+        this.device = 'tablet';
+      }
+      else if (576 <= this.deviceWidth && this.deviceWidth <= 768) {  // 모바일 디바이스
+        this.device = 'mobile';
+      }
+      else if (this.deviceWidth < 576) { // 가장 작은 디바이스
+        this.device = 'mobile';
+      }
+      else {  // 큰화면 데스크탑
+        this.device = 'web';
+      }
+      console.log('device', this.device);
     },
     navList() {
       window.$('.hamburger').toggleClass('is-active');
@@ -111,22 +136,40 @@ export default {
     bodyScroll() {
       const scrollBar = document.querySelector('.scroll-bar');
       scrollBar.animate(
-          [
-            { transform: 'translateX(-100%)' },
-            { transform: 'translateX(0)' }
-          ],
-          {
-            fill: 'both',
-            duration: 1,
-            // eslint-disable-next-line no-undef
-            timeline: new ScrollTimeline({
-              scrollOffsets: [
-                { target: document.body, edge: 'start', threshold: 1 },
-                { target: document.body, edge: 'end', threshold: 1 },
-              ]
-            })
-          }
+        [
+          { transform: 'translateX(-100%)', offset: 0 },
+          { transform: 'translateX(0)', offset: 1 }
+        ],
+        {
+          fill: 'both',
+          duration: 1000,
+          // eslint-disable-next-line no-undef
+          timeline: new ScrollTimeline({
+            scrollOffsets: [
+              { target: document.body, edge: 'start', threshold: 1 },
+              { target: document.body, edge: 'end', threshold: 1 },
+            ]
+          })
+        }
       )
+      // const careerScroll = document.querySelector('#detail-contain3');
+      // careerScroll.animate(
+      //     [
+      //       { backgroundColor: '#171E41', offset: 0.56 },
+      //       { backgroundColor: 'white', offset: 0.8 },
+      //       { backgroundColor: 'white', offset: 1 },
+      //     ],
+      //     {
+      //       duration: 1000,
+      //       // eslint-disable-next-line no-undef
+      //       timeline: new ScrollTimeline({
+      //         scrollOffsets: [
+      //           { target: document.body, edge: 'start', threshold: 1 },
+      //           { target: document.body, edge: 'end', threshold: 1 },
+      //         ]
+      //       })
+      //     }
+      // );
     },
   },
 }
