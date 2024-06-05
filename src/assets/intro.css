@@ -125,7 +125,7 @@
 /* introDetailView */
 .scroll-bar {
   width: 100%;
-  height: 6px;
+  height: 3px;
   background: #f82af5;
   position: fixed;
   top: 0;
@@ -340,17 +340,37 @@
 @media (max-width: 576px) {
   .my-avatar {}
   .avatar-label {}
+  .skill-contain .skill-item .skill-name {
+
+  }
 }
 /* 태블릿 디바이스 */
 @media (max-width: 768px) {
   .my-avatar {}
   .avatar-label {}
+  .skill-contain .skill-item .skill-name {
+    transform: translate(0, -50%) rotate(0deg);
+    filter: drop-shadow(0px 0px 10px #000000);
+    backdrop-filter: none;
+    font-size: 1.65rem;
+  }
+  .skill-contain .skill-item:nth-child(odd) .skill-name {
+    left: 100%;
+    transform: translate(-100%, -50%) rotate(0deg);
+    filter: drop-shadow(0px 0px 10px #000000);
+    backdrop-filter: none;
+  }
 }
 /* 데스크탑 */
 @media (max-width: 992px) {
-  .my-avatar {width: 200px;height: 200px;}
+  .my-avatar { width: 200px; height: 200px; }
   .avatar-label {}
+  .skill-contain .skill-item .skill-name {
+    padding: 0.7rem 1.6rem;
+    font-size: 1.35rem;
+  }
 }
 /* 큰화면 데스크탑 */
 @media (max-width: 1200px) {
+
 }
