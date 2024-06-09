@@ -28,7 +28,7 @@
           <div class="avatar-talk">
             <span class="talk-arrow">◀</span>
             <span style="color: rgba(255,255,255,0.47)">
-              <font class="font-gradient">Frontend</font>로서 차근차근 쌓아올리는 개발자
+              <font class="font-gradient">Frontend</font>로서 차근차근 쌓아올리는 개발자 <br>
               <font class="font-gradient">이시우</font> 입니다.
             </span>
           </div>
@@ -44,6 +44,7 @@
               <span class="font-500">SKILL</span>
               <span>/&gt;</span>
             </h2>
+            <div class="skill-labels"></div>
             <ul class="skill-contain">
               <li class="skill-item" v-for="(item, index) in skillLists" :data-aos="index%2===0 ? 'zoom-in-left' : 'zoom-in-right'">
                 <p class="skill-name font-700">{{ item.skill }}</p>
@@ -93,11 +94,12 @@ export default {
     deviceWidth: window.innerWidth,
   }),
   mounted() {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     skillList.map( item => {
       this.skillDesc.push(item.desc);
     });
     this.bodyScroll();
+    this.skillLabelMove();
     window.addEventListener('resize', this.windowSizeChange);
   },
   created() {
@@ -108,7 +110,7 @@ export default {
   },
   methods : {
     initTop() {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
     },
     windowSizeChange() {
       this.deviceWidth = window.innerWidth;
@@ -170,6 +172,36 @@ export default {
       //       })
       //     }
       // );
+    },
+    skillLabelMove() {
+      const skillLabel = document.querySelector('.skill-labels');
+      const labels = [];
+
+      let label;
+      for (let i = 0; i < this.skillLists.length; i++ ) {
+        label = document.createElement('span');
+        label.classList.add('skill-label');
+        label.innerHTML = `
+          <div><img src="/assets/images/icons/${this.skillLists[i].icon}" alt="${this.skillLists[i].skill}"></div>
+          <div class="font-700">${this.skillLists[i].skill}</div>
+        `;
+        skillLabel.append(label);
+        labels.push(label);
+      }
+      const labelKeyFrames = [
+        { transform: 'translateY(-20%)' },
+        { transform: 'translateY(50%)' },
+      ];
+      const labelOptions = {
+        duration: 1500,
+        iterations: Infinity,
+        direction: 'alternate',
+        fill: 'both',
+        easing: 'ease-in-out'
+      }
+      labels.forEach((label, index) => {
+        label.animate(labelKeyFrames, { ...labelOptions, delay: index*200 });
+      });
     },
   },
 }
