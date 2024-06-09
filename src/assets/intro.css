@@ -226,7 +226,7 @@
   /*width: 100%;*/
   position: relative;
   margin: 5.2rem 2rem 5.2rem 0;
-  padding: 1rem 1.425rem;
+  padding: 1rem 2.425rem 1rem 1.425rem;
   border: 3px solid #3ac7d9;
   border-radius: 15px;
   box-shadow: 0 0 12px #3ac7d9;
@@ -288,23 +288,39 @@
 }
 .skills-area > .skill-labels {
   width: 100%;
-  height: 4rem;
   margin-bottom: 8rem;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 .skills-area > .skill-labels > span {
+  width: 100px;
+  height: 80px;
   color: #cdd3f6;
   will-change: transform;
   animation: labelMove 3s ease infinite;
   animation-fill-mode: both;
-  /*background-color: #4a35d0;*/
   padding: 0.3rem 0.8rem;
   border-radius: 8px;
   margin-right: 0.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
+.label-ico {
+  text-align: center;
+}
+.label-text {
+  text-align: center;
+}
+.label-ico > img {
+  width: 30px;
+}
+.label-ico > img[filterWhite="true"] {
+  filter: brightness(0) invert(1);
 }
 
 .skill-contain {
@@ -312,6 +328,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 .skill-contain li {
   color: #FFF;
@@ -361,8 +378,8 @@
 @media (max-width: 576px) {
   .my-avatar {}
   .avatar-label {}
-  .skill-contain .skill-item .skill-name {
-
+  .skill-contain li.skill-item {
+    width: 100%;
   }
 }
 /* 태블릿 디바이스 */

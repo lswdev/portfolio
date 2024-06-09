@@ -28,7 +28,7 @@
           <div class="avatar-talk">
             <span class="talk-arrow">◀</span>
             <span style="color: rgba(255,255,255,0.47)">
-              <font class="font-gradient">Frontend</font>로서 차근차근 쌓아올리는 개발자 <br>
+              <font class="font-gradient">Frontend</font> 로서 차근차근 쌓아올리는 개발자 <br>
               <font class="font-gradient">이시우</font> 입니다.
             </span>
           </div>
@@ -181,16 +181,21 @@ export default {
       for (let i = 0; i < this.skillLists.length; i++ ) {
         label = document.createElement('span');
         label.classList.add('skill-label');
+        const imgSrc = require(`@/assets/images/icons/${this.skillLists[i].icon}`);
         label.innerHTML = `
-          <div><img src="/assets/images/icons/${this.skillLists[i].icon}" alt="${this.skillLists[i].skill}"></div>
-          <div class="font-700">${this.skillLists[i].skill}</div>
+          <div class="label-ico">
+            <img src="${imgSrc}" alt="${this.skillLists[i].skill}"
+              style="${this.skillLists[i].iconCustomWidth ? `width: ${this.skillLists[i].iconCustomWidth}` : ''}"
+              filterWhite="${this.skillLists[i].filterWhite}">
+          </div>
+          <div class="label-text font-700">${this.skillLists[i].skill}</div>
         `;
         skillLabel.append(label);
         labels.push(label);
       }
       const labelKeyFrames = [
         { transform: 'translateY(-20%)' },
-        { transform: 'translateY(50%)' },
+        { transform: 'translateY(20%)' },
       ];
       const labelOptions = {
         duration: 1500,

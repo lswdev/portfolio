@@ -8,14 +8,16 @@ const skillList = [
       'Params를 활용한 동적 라우트 매칭이 가능합니다.',
       '컴포넌트를 이용해 재사용성을 높힐 수 있습니다.',
     ],
-    icon: 'vue-icon.png'
+    icon: 'vue-icon.png',
+    iconCustomWidth: '32px',
   }, {
     skill: 'React',
     desc: [
       'ReactHook 사용 경험이 있습니다.',
       'yarn, npm 사용 경험이 있습니다.'
     ],
-    icon: 'react-icon.png'
+    icon: 'react-icon.png',
+    iconCustomWidth: '34px',
   }, {
     skill: 'HTML/CSS',
     desc: [
@@ -27,7 +29,8 @@ const skillList = [
       'keyframe을 활용한 애니메이션 기법을 활용할 수 있습니다.',
       '가독성을 위한 시멘틱 구조에 맞게 작성할 수 있습니다.',
     ],
-    icon: 'html-css-icon.png'
+    icon: 'html-css-icon.png',
+    iconCustomWidth: '45px',
   }, {
     skill: 'Javascript',
     desc: [
@@ -44,7 +47,8 @@ const skillList = [
     desc: [
       'Kubernetes nginx 서버 배포 및 플러그인 적용 경험이 있습니다.',
     ],
-    icon: 'infra-icon.png'
+    icon: 'infra-icon.png',
+    iconCustomWidth: '36px',
   }, {
     skill: 'ETC',
     desc: [
@@ -53,7 +57,9 @@ const skillList = [
       'Postman을 이용한 Require 테스트 경험이 있습니다.',
       'Swagger 라이브러리를 사용한 API 테스트 경험이 있습니다.',
     ],
-    icon: 'etc-icon.png'
+    icon: 'etc-icon.png',
+    iconCustomWidth: '38px',
+    filterWhite: true,
   },
   // {
   //   skill: '',
