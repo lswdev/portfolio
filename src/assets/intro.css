@@ -279,7 +279,7 @@
   justify-content: flex-start;
 }
 .skills-area > h2 {
-  width: 30%;
+  /*width: 30%;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -293,7 +293,7 @@
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 1.4rem;
 }
 .skills-area > .skill-labels > span {
   width: 100px;
@@ -344,7 +344,7 @@
 }
 .skill-contain > li:nth-child(odd) {
   align-self: flex-end;
-}
+}/*
 .skill-contain .skill-item .skill-name {
   position: absolute;
   top: 0;
@@ -356,10 +356,23 @@
   backdrop-filter: blur(1.12rem);
   transform: translate(-50%, -50%) rotate(-15deg);
 }
+*/
+.skill-contain .skill-item .skill-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #FFF;
+  filter: drop-shadow(0 0 18px #0a2527);
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
 .skill-contain .skill-item:nth-child(odd) .skill-name {
   left: 100%;
   transform: translate(-50%, -50%) rotate(15deg);
 }
+
 .skill-desc {
   word-break: keep-all;
   white-space: pre-wrap;
@@ -414,7 +427,7 @@
   .avatar-label {}
   .skill-contain .skill-item .skill-name {
     padding: 0.7rem 1.6rem;
-    font-size: 1.35rem;
+    font-size: 1.55rem;
   }
 }
 /* 큰화면 데스크탑 */
