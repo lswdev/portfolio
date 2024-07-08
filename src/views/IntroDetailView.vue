@@ -26,7 +26,6 @@
           <span class="avatar-label">Developer</span>
           <span class="my-avatar">이시우<br>1997. 02. 28<br>Lee Siwoo</span>
           <div class="avatar-talk">
-            <!--<span class="talk-arrow">◀</span>-->
             <span style="color: rgba(255,255,255,0.47)">
               <font class="font-gradient">Frontend</font> 로서 차근차근 쌓아올리는 개발자 <br>
               <font class="font-gradient">이시우</font> 입니다.
@@ -39,11 +38,7 @@
       <div class="main-top-contain detail-contain" id="detail-contain2" ref="detailContain2">
         <div class="intro-detail skills">
           <div class="custom-area skills-area">
-            <h2> <!-- data-aos="zoom-out-up" data-aos-anchor-placement="top-bottom"-->
-              <!--<span style="padding-right: 17px">&lt;</span>-->
-              <span class="font-700" style="font-size: 2.5rem">SKILL</span>
-              <!--<span>/&gt;</span>-->
-            </h2>
+            <h2 class="font-700" style="font-size: 2.5rem">SKILL</h2>
             <div class="skill-labels"></div>
             <ul class="skill-contain">
               <li class="skill-item" v-for="(item, index) in skillLists" :data-aos="index%2===0 ? 'zoom-in-left' : 'zoom-in-right'">
@@ -63,7 +58,23 @@
       <div class="main-top-contain detail-contain" id="detail-contain3" ref="detailContain3">
         <div class="intro-detail careers">
           <div class="custom-area">
-            <h2>Login3</h2>
+            <h2 class="font-700" style="font-size: 2.5rem">CAREER</h2>
+            <div class="career-contain">
+              <div class="career-item" v-for="(item, index) in careerLists" style="color: #FFF;">{{ item }}</div>
+            </div>
+<!--
+            <ul class="career-contain">
+
+                <p class="career-name font-700">{{ item.career }}</p>
+                <ul class="career-desc">
+                  <li v-for="(item, index) in careerDesc[index]">
+                    <span>▪</span>
+                    <span>{{ item }}</span>
+                  </li>
+                </ul>
+              </li>
+            </ul>-->
+
           </div>
         </div>
       </div>
@@ -87,6 +98,7 @@ export default {
     windowTop: window.top.scrollY,
     windowHeight: null,
     toggleNav: false,
+    careerLists : careerList,
     skillLists: skillList,
     skillDesc: [],
     skillDirection: 'zoom-in-left',

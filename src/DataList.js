@@ -61,16 +61,63 @@ const skillList = [
     iconCustomWidth: '38px',
     filterWhite: true,
   },
-  // {
-  //   skill: '',
-  //   desc: ['']
-  // },
 ]
 
 const careerList = [
   {
-    skill: 'Vue',
-    desc: ['vuex 사용 경험이 있습니다.', 'Vue2 option api를 사용할 수 있습니다.']
+    company: '(주)에이피위즈덤',
+    project: [
+      {
+        name: 'KT Paperless 플랫폼',
+        order: 'KT',
+        dateFrom : '2021.09',
+        dateTo : '2022.04',
+        role: '개발',
+        skill: ['HTML', 'Sass', 'Java', 'Javascript', 'jQuery', 'Thymeleaf'],
+        desc: '',
+      },
+    ],
+  },
+  {
+    company: '(주)케이원',
+    project: [
+      {
+        name: 'NH투자증권 모바일 등기 서비스',
+        order: 'NH투자증권',
+        dateFrom : '2022.05',
+        dateTo : '2022.11',
+        role: '개발',
+        skill: ['jsp', 'Javascript', 'jQuery', 'Thymeleaf', 'Jaspersoft Studio'],
+        desc: '',
+      },
+      {
+        name: '미즈호 전자문서 유통 플랫폼 meDP 시스템',
+        order: '미즈호',
+        dateFrom : '2022.12',
+        dateTo : '2023.06',
+        role: '개발',
+        skill: ['Vue', 'Vuex', 'Javascript', 'Bootstrap', 'Bootstrap-vue', 'Thymeleaf'],
+        desc: '',
+      },
+      {
+        name: 'DX 플랫폼 개발',
+        order: '(주)케이원',
+        dateFrom : '2023.07',
+        dateTo : '2023.12',
+        role: '개발',
+        skill: ['Vue', 'Vuex', 'Javascript', 'Bootstrap', 'Bootstrap-vue', 'Thymeleaf'],
+        desc: '',
+      },
+      {
+        name: 'PayGo 근로관리 App',
+        order: '(주)케이원',
+        dateFrom : '2024.01',
+        dateTo : '현재',
+        role: '개발',
+        skill: ['Vue', 'Vuex', 'Javascript', 'Bootstrap', 'Bootstrap-vue', 'Thymeleaf'],
+        desc: '',
+      },
+    ],
   },
 ]
 export { skillList, careerList }
