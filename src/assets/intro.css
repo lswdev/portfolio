@@ -81,7 +81,6 @@
   position: relative;
   width: 100%;
   text-align: center;
-  display: none;
 }
 .custom-area .inputBx input {
   opacity: 0;
@@ -103,11 +102,11 @@
   transition: 0.7s ease all;
   transition-delay: 0.5s;
 }
-.custom-area h2 {
+.custom-area h2.my-name {
   transform: translateY(100%);
   transition: 0.5s ease-in all;
 }
-.custom-area:hover h2 {
+.custom-area:hover h2.my-name {
   transform: translateY(0);
 }
 .custom-area:hover .inputBx input {
