@@ -84,8 +84,9 @@
   display: none;
 }
 .custom-area .inputBx input {
+  opacity: 0;
   position: relative;
-  width: 70%;
+  width: 40%;
   padding: 12px 20px;
   background: transparent;
   border: 1px solid #fff;
@@ -97,9 +98,20 @@
   font-size: 1.12rem;
   font-weight: 300;
   text-align: center;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
   transition: 0.7s ease all;
+  transition-delay: 0.5s;
+}
+.custom-area h2 {
+  transform: translateY(100%);
+  transition: 0.5s ease-in all;
+}
+.custom-area:hover h2 {
+  transform: translateY(0);
+}
+.custom-area:hover .inputBx input {
+  opacity: 1;
 }
 .custom-area .inputBx input:hover {
   border: 2px solid #01fdcf;
