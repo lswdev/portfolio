@@ -60,11 +60,13 @@
           <div class="custom-area">
             <h2 class="font-700" style="font-size: 2.5rem">CAREER</h2>
             <div class="career-contain">
-              <div class="career-item" v-for="(item, index) in careerLists" style="color: #FFF;">{{ item }}</div>
-            </div>
-<!--
-            <ul class="career-contain">
+              <div class="career-item" v-for="(item, index) in careerLists" style="color: #FFF;">{{ item }}
 
+              </div>
+            </div>
+            <!--
+            <ul class="career-contain">
+              <li>
                 <p class="career-name font-700">{{ item.career }}</p>
                 <ul class="career-desc">
                   <li v-for="(item, index) in careerDesc[index]">

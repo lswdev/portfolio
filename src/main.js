@@ -17,6 +17,12 @@ global.jQuery = require('jquery');
 const $ = global.jQuery;
 window.$ = $;
 
+// gsap 라이브러리
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+Vue.prototype.$gsap = gsap;
+
 import App from './App.vue'
 Vue.config.productionTip = false
 
