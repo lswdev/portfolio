@@ -25,12 +25,20 @@
         <div class="avatar">
           <span class="avatar-label">Developer</span>
           <span class="my-avatar">이시우<br>1997. 02. 28<br>Lee Siwoo</span>
-          <div class="avatar-talk">
-            <span style="color: rgba(255,255,255,0.47)">
+          <section class="avatar-talk">
+            <span style="color: rgba(255,255,255,0.91)">
               <font class="font-gradient">Frontend</font> 로서 차근차근 쌓아올리는 개발자 <br>
-              <font class="font-gradient">이시우</font> 입니다.
+              <font class="font-gradient">이시우</font> 입니다.  <br><br>
+              <p>
+                <em>새로운 기술에 대한 호기심이 많아, 항상 최신 트렌드를 따라가며 배우는 것을 즐깁니다.</em>
+                <em>문제 해결을 좋아해, 도전적인 과제를 마주할 때면 더욱 신나는 마음으로 임합니다.</em>
+                <em>팀과의 협업을 통해 창의적인 아이디어를 실현하는 것을 중요하게 생각하며, 다양한 프로젝트에서 쌓은 경험을 바탕으로 언제나 성장하고자 합니다.</em>
+                <em>앞으로도 더 많은 기술을 배우고, 혁신적인 개발을 통해 긍정적인 변화를 만들어 가고 싶습니다.</em>
+                <em>함께 멋진 결과물을 만들어 나가길 기대합니다. 감사합니다!</em>
+              </p>
+
             </span>
-          </div>
+          </section>
         </div>
         <img class="mouse-scroll" src="../assets/images/mouse-cursor-lg.png" alt="mouse-scroll-point">
       </div>
@@ -167,7 +175,26 @@ export default {
             ]
           })
         }
-      )
+      );
+      const careerScroll = document.querySelector('.main-top-contain:not(#detail-contain1, #detail-contain2)');
+      console.log("careerScroll  :: ", careerScroll);
+      // scrollBar.animate(
+      //     [
+      //       { transform: 'translateX(-100%)', offset: 0 },
+      //       { transform: 'translateX(0)', offset: 1 }
+      //     ],
+      //     {
+      //       fill: 'both',
+      //       duration: 1000,
+      //       // eslint-disable-next-line no-undef
+      //       timeline: new ScrollTimeline({
+      //         scrollOffsets: [
+      //           { target: document.body, edge: 'start', threshold: 1 },
+      //           { target: document.body, edge: 'end', threshold: 1 },
+      //         ]
+      //       })
+      //     }
+      // )
       // const careerScroll = document.querySelector('#detail-contain3');
       // careerScroll.animate(
       //     [

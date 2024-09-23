@@ -1,3 +1,11 @@
+/* tag custom */
+
+.avatar p em {
+  display: block;
+  padding-bottom: 1rem;
+}
+.avatar p em:last-child { padding-bottom: 0 }
+
 /* animation */
 .main-top-contain {
   display: flex;
@@ -195,7 +203,6 @@
   text-align: center;
   transition: 0.3s ease all;
   color: rgba(255, 255, 255, 0);
-  cursor: pointer;
   animation: avatarBorder 2s ease-in-out infinite;
 }
 .my-avatar:hover {
@@ -247,11 +254,27 @@
   animation-delay: 0.8s;
   animation-fill-mode: both;
 }
+.avatar-talk > span {
+  will-change: opacity;
+  animation: flickerTalk 2s ease 3s infinite;
+  animation-delay: 3s;
+}
 @keyframes avatarTalk {
   0% { opacity: 0; transform: translateY(3rem);}
   35% { opacity: 1; transform: translateY(0);}
   100% { opacity: 1; transform: translateY(0);}
 }
+@keyframes flickerTalk {
+  0% { opacity: 1; }
+  69% { opacity: 1; }
+  70% { opacity: 0.6; }
+  75% { opacity: 0.9; }
+  80% { opacity: 0.6; }
+  90% { opacity: 1; }
+  100% { opacity: 1 }
+}
+
+
 .avatar-talk .talk-arrow {
   position: absolute;
   right: calc(100% - 4px);
@@ -406,6 +429,9 @@
   margin-top: 2rem;
 }
 
+.detail-section .main-top-contain:not(#detail-contain1, #detail-contain2) {
+  filter: invert(1);
+}
 
 
 
@@ -423,13 +449,13 @@
     flex-direction: column;
   }
   .avatar-talk {
-    margin: 0 4rem 5.2rem 4rem;
+    /*margin: 0 4rem 5.2rem 4rem;*/
+    width: calc(100% / 1.2);
+    margin: 0 auto;
   }
   .talk-arrow {
     display: none;
   }
-  .my-avatar {}
-  .avatar-label {}
   .skill-contain .skill-item .skill-name {
     transform: translate(0, -50%) rotate(0deg);
     filter: drop-shadow(0px 0px 10px #000000);
