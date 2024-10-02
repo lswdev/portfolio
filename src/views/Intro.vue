@@ -1,6 +1,6 @@
 <!--eslint-disable-->
 <template>
-  <div class="main-top-contain">
+  <div class="main-top-contain" :intro="$route.name==='intro'">
     <div class="ring" @mouseenter="pointerHideAnimation" @mouseleave="pointerShowAnimation">
       <i style="--clr:#27fd01;"></i>
       <i style="--clr:#ff0057;"></i>
@@ -63,6 +63,7 @@ export default {
     inputAnimation();
     this.checkBrowser();
     this.isMobile();
+    console.log('this.$route.name', this.$route.name);
   },
 }
 </script>

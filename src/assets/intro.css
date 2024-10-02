@@ -3,6 +3,7 @@
 .avatar p em {
   display: block;
   padding-bottom: 1rem;
+  color: #0a2527;
 }
 .avatar p em:last-child { padding-bottom: 0 }
 
@@ -177,13 +178,13 @@
   border-radius: 10vw 10vw 0 0;
   border-top: 4px solid rgba(61, 53, 125, 0.81);
 }
-#detail-contain1, #detail-contain2, #detail-contain3, #detail-contain4 {
+#detail-contain2, #detail-contain3, #detail-contain4 {
   background-color: #171E41;
 }
 .detail-contain {
-  flex-flow: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  /*flex-flow: column;*/
+  /*justify-content: flex-start;*/
+  /*align-items: flex-start;*/
   position: relative;
 }
 
@@ -222,14 +223,14 @@
 }
 .avatar {
   width: 100%;
-  padding-top: 5rem;
   display: flex;
+  align-items: center;
 }
 .avatar-label {
   position: absolute;
   z-index: 1;
   left: 0;
-  top: 4.3rem;
+  top: 50%;
   font-size: 1.125rem;
   color: #FFF;
   background-color: rgb(39,37,37);
@@ -238,7 +239,7 @@
   margin: 5rem;
   padding: 0.5rem 0;
   writing-mode: vertical-lr;
-  transform: rotate(-140deg)
+  transform: translateY(-180%) rotate(-140deg);
 }
 .avatar-talk {
   /*width: 100%;*/
@@ -297,14 +298,16 @@
 /* nav-list */
 .nav-list {
   /*backdrop-filter: sepia(90%);*/
-  /*backdrop-filter: invert(80%);*/
-  backdrop-filter: blur(1.2rem);
+  backdrop-filter: invert(80%);
+  /*backdrop-filter: blur(1.2rem);*/
   padding: 1rem;
   border-radius: 20px;
+  color: #FFF;
 }
 .nav-list li:hover {
   cursor: pointer;
-  list-style: circle;
+  list-style: none;
+  text-decoration: underline;
 }
 
 /* skill-list */
@@ -357,7 +360,7 @@
 .label-ico > img[filterWhite="true"] {
   filter: brightness(0) invert(1);
 }
-/* skills */
+/* skills 스킬 */
 .skill-contain {
   width: 100%;
   display: flex;
@@ -420,7 +423,7 @@
 }
 
 
-/* career-list */
+/* career-list 경력 */
 .career-contain {
   width: 100%;
   display: flex;
@@ -430,17 +433,87 @@
 }
 
 .detail-section .main-top-contain:not(#detail-contain1, #detail-contain2) {
-  filter: invert(1);
+  /*filter: invert(1);*/
 }
+
+.careers .custom-area {
+  border: 7px double rgb(166, 207, 213);
+  padding: 1rem;
+  border-radius: 13px;
+  will-change: transform;
+  animation: flash;
+}
+.careers .custom-area * {
+  color: black;
+}
+
+@keyframes flash {
+  0% {
+    color: #3ac3d5;
+    /*box-shadow: 0 0 10px black, 1px 1px #70cbd7, 0 0 280px #091e21;*/
+  }
+  80% {
+    color: #3ac3d5;
+    /*box-shadow: 0 0 10px #3ac3d5, 1px 1px #70cbd7, 0 0 280px #091e21;*/
+  }
+  81% {
+    color: #222;
+    /*box-shadow: 0 0 10px #000, 1px 1px #70cbd7, -2px 0 4px #29121A;!**!*/
+  }
+  94% {
+    color: #222;
+    /*box-shadow: 0 0 10px #000, 1px 1px #70cbd7, -2px 0 4px #29121A;!**!*/
+  }
+  95% {
+    color: #3ac3d5;
+    /*box-shadow: 0 0 10px #3ac3d5, 1px 1px #70cbd7, 0 0 280px #091e21;*/
+  }
+  96% {
+    color: #222;
+    /*box-shadow: 0 0 10px #000, 1px 1px #70cbd7, -2px 0 4px #29121A;!**!*/
+  }
+  97% {
+    color: #3ac3d5;
+    /*box-shadow: 0 0 10px #3ac3d5, 1px 1px #70cbd7, 0 0 280px #091e21;*/
+  }
+  98% {
+    color: #3ac3d5;
+    /*box-shadow: 0 0 10px #3ac3d5, 1px 1px #70cbd7, 0 0 280px #091e21;*/
+  }
+  99% {
+    color: #222;
+    /*box-shadow: 0 0 10px #000, 1px 1px #70cbd7, -2px 0 4px #29121A;  !**!*/
+  }
+  100% {
+    color: #3ac3d5;
+    /*box-shadow: 0 0 10px black, 1px 1px #70cbd7, 0 0 280px #091e21;*/
+  }
+}
+
+
 
 
 
 /* 모바일 가로 모드 */
 @media (max-width: 576px) {
+  .mouse-scroll {
+    display: none;
+  }
   .my-avatar {}
-  .avatar-label {}
+  .avatar-label {
+    display: none;
+  }
   .skill-contain li.skill-item {
     width: 100%;
+  }
+  #detail-contain1 {
+    position: relative;
+  }
+  #detail-contain2 {
+    margin-top: 5rem;
+  }
+  .my-avatar {
+    margin-bottom: 1.875rem;
   }
 }
 /* 태블릿 디바이스 */

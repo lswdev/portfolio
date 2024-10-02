@@ -14,7 +14,7 @@
             </div>
           </div>
         </div>
-        <ul class="nav-list" style="color: #FFF;" v-if="toggleNav">
+        <ul class="nav-list" v-if="toggleNav">
           <li @click="">introduce</li>
           <li @click="">skill</li>
           <li @click="">careers</li>
@@ -27,8 +27,10 @@
           <span class="my-avatar">이시우<br>1997. 02. 28<br>Lee Siwoo</span>
           <section class="avatar-talk">
             <span style="color: rgba(255,255,255,0.91)">
-              <font class="font-gradient">Frontend</font> 로서 차근차근 쌓아올리는 개발자 <br>
-              <font class="font-gradient">이시우</font> 입니다.  <br><br>
+              차근차근 쌓아올리는 개발자
+              <p>
+                <font class="font-gradient">Frontend 이시우</font> 입니다.
+              </p>
               <p>
                 <em>새로운 기술에 대한 호기심이 많아, 항상 최신 트렌드를 따라가며 배우는 것을 즐깁니다.</em>
                 <em>문제 해결을 좋아해, 도전적인 과제를 마주할 때면 더욱 신나는 마음으로 임합니다.</em>
@@ -68,9 +70,7 @@
           <div class="custom-area">
             <h2 class="font-700" style="font-size: 2.5rem">CAREER</h2>
             <div class="career-contain">
-              <div class="career-item" v-for="(item, index) in careerLists" style="color: #FFF;">{{ item }}
-
-              </div>
+              <div class="career-item" v-for="(item, index) in careerLists">{{ item }}</div>
             </div>
             <!--
             <ul class="career-contain">
